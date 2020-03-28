@@ -72,7 +72,9 @@ __weak static id appDelegate;
 			vc.statusBarHidden = [newVC prefersStatusBarHidden];
 			vc.statusBarStyle = [newVC preferredStatusBarStyle];
 			[vc.view addSubview:[newVC.view snapshotViewAfterScreenUpdates:YES]];
-			[[appDelegate window] setRootViewController:vc];
+			
+			//iPhone 8 plus IOS 13.3 BlackScreen Issue - Commenting 77th line
+			//[[appDelegate window] setRootViewController:vc];
 
 			[currentVC dismissViewControllerAnimated:NO completion:^{
 				[[appDelegate window] setRootViewController:newVC];
